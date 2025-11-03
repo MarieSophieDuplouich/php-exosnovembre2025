@@ -76,11 +76,21 @@ if (
         </div>
     </section>
 
+<?php session_start();
 
-    <form action="" method="post">
+if (!isset($_SESSION["email"])) {
+    // Si l'utilisateur n'est pas connecté, on récupère son nom d'utilisateur
+    header("Location: login.php");
+    exit();
+}
 
-        <button>Créer le compte</button>
-    </form>
+$email = $_SESSION["email"];
+?>
+
+   
+    <a href="login.php">Se connecter</a>
+        <a href="logout.php">Se déconnecter</a>
+    <h2>Bienvenue <?= htmlspecialchars($email) ?> sur la page d'administration !!!!!!!!!!!!! </h2>
 </body>
 
 </html>
