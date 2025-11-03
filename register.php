@@ -1,5 +1,23 @@
 <?php
+
+
 session_start();
+
+//Si l'utilisateur s'inscrit , il quitte la session d'inscription
+//pour se connecter
+ if(isset( $_SESSION['email'] ))
+{
+    $message = 'Users is already logged in';
+    header("location:index.php");
+    exit;
+}
+if (($_SERVER['REQUEST_METHOD'] == 'POST') && isset($_POST['registerbtn']) && (!empty($_POST['registerbtn'])))
+  
+
+ 
+//Assuming $_POST['action'] is the name of your submit button.
+//réponse de stackoverflow https://stackoverflow.com/questions/20450991/redirect-to-homepage-after-registration
+
 
 
 if(
@@ -116,7 +134,7 @@ a {
     <hr>
     <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
 
-    <button type="submit" class="registerbtn">Register</button>
+    <button type="submit" class="registerbtn" name="registerbtn">Register</button>
   </div>
   
   <div class="container signin">
