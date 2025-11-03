@@ -7,15 +7,18 @@ if (
     isset($_POST["name"]) &&
     isset($_POST["lastname"])
     &&  isset($_POST["img"])
+    &&  isset($_POST["password"])
 
 ) {
     $database = new PDO("mysql:host=127.0.0.1;dbname=novembre", "root", "root");
-    $request = $database->prepare("SELECT * FROM User WHERE email=? AND name=? AND lastname=? AND img=? ");;
+    $request = $database->prepare("SELECT * FROM User WHERE email=? AND name=? AND lastname=? AND img=? AND password=? ");;
     $request->execute([
         $_POST["email"],
          $_POST["name"],
         $_POST["lastname"],
-        $_POST["img"]
+        $_POST["img"],
+         $_POST["password"]
+
       
     ]);
     $user = $request->fetch(PDO::FETCH_ASSOC);

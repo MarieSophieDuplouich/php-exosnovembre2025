@@ -47,10 +47,5 @@ if (isset($_POST['email'], $_POST['password'])) {
     <button type="submit">Se connecter</button>
 </form>
 
-<form action="POST">
-
-
-</form>
-
 
 

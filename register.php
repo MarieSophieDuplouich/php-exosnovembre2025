@@ -4,15 +4,18 @@ session_start();
 
 if(
     isset($_POST["email"]) && 
-    isset($_POST["img"]) && 
+    isset($_POST["password"]) && 
      isset($_POST["lastname"])
      &&  isset($_POST["name"])
 
 ){
     $database = new PDO("mysql:host=127.0.0.1;dbname=novembre","root","root");
-    $request = $database->prepare("SELECT * FROM User WHERE email=?");
+    $request = $database->prepare(  "INSERT INTO User (email, password, lastname, name) VALUES (?, ?, ?, ?)");
     $request->execute([
-        $_POST["email"]
+        $_POST["email"],
+        $_POST["password"],
+         $_POST["lastname"],
+        $_POST["name"]
     ]);
     $user = $request->fetch(PDO::FETCH_ASSOC);
     var_dump($user);
@@ -93,7 +96,7 @@ a {
 </head>
 <body>
 
-<form action="/action_page.php">
+<form action="/register.php" method="post">
   <div class="container">
     <h1>Register</h1>
     <p>Please fill in this form to create an account.</p>
@@ -108,8 +111,8 @@ a {
     <label for="lastname"><b>lastname</b></label>
     <input type="text" placeholder="lastname" name="lastname" id="lastname" required>
 
-    <label for="img"><b>Image</b></label>
-    <input type="text" placeholder="Image" name="img" id="img" required>
+    <label for="password"><b>Password</b></label>
+    <input type="password" placeholder="Password" name="password" id="password" required>
     <hr>
     <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
 
