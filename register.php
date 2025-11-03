@@ -1,3 +1,27 @@
+<?php
+session_start();
+
+
+if(
+    isset($_POST["email"]) && 
+    isset($_POST["img"]) && 
+     isset($_POST["lastname"])
+     &&  isset($_POST["name"])
+
+){
+    $database = new PDO("mysql:host=127.0.0.1;dbname=USER","root","root");
+    $request = $database->prepare("SELECT * FROM User WHERE email=?");
+    $request->execute([
+        $_POST["email"]
+    ]);
+    $user = $request->fetch(PDO::FETCH_ASSOC);
+    var_dump($user);
+}
+
+?>
+
+
+
 <!DOCTYPE html>
 <html>
 <head>
