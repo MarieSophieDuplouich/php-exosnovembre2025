@@ -70,6 +70,7 @@ if(
     <div class="user-info">
         <h1 class="name"> <?= htmlspecialchars($user['name']) ?></h1>
         <p class="email">  <?= htmlspecialchars($user['email']) ?></p>
+      <p> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quo incidunt delectus officiis. Optio voluptatibus nobis nesciunt facilis. Ea dignissimos id corporis asperiores earum, magnam architecto sint laborum blanditiis enim maiores?</p> 
     </div>
 </section>
 </body>
