@@ -10,6 +10,7 @@ body{
     align-items: center;
     flex-direction: column-reverse; */
       height: 100vh;
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 /* D'après maquette Massi */
@@ -18,6 +19,9 @@ section{
   
     background:blue;
     display:flex;
+    gap: 50px;
+    padding: 50px;
+    line-height: 3em;
 }
 
 
@@ -30,7 +34,9 @@ div.user-info{
     flex:2;
 }
 
-
+h1{
+    font-size: x-large;
+}
 
 /* D'après maquette Massi fin */
 
