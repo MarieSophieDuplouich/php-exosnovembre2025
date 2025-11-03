@@ -46,6 +46,7 @@ if (isset($_POST['email'], $_POST['password'])) {
     <input type="password" name="password" placeholder="Mot de passe" required>
     <button type="submit">Se connecter</button>
 </form>
+<a href="register.php">Se créer un compte</a>
 
 
 

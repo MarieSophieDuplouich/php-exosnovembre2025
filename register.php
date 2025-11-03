@@ -13,7 +13,7 @@ if(
     $request = $database->prepare(  "INSERT INTO User (email, password, lastname, name) VALUES (?, ?, ?, ?)");
     $request->execute([
         $_POST["email"],
-        $_POST["password"],
+        password_hash($_POST["password"],PASSWORD_DEFAULT),
          $_POST["lastname"],
         $_POST["name"]
     ]);
@@ -120,7 +120,7 @@ a {
   </div>
   
   <div class="container signin">
-    <p>Already have an account? <a href="#">Sign in</a>.</p>
+    <p>Already have an account? <a href="index.php">Sign in</a>.</p>
   </div>
 </form>
 
