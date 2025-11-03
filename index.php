@@ -6,6 +6,8 @@
     <title>Exos php novembre 2025</title>
 </head>
 <body>
-    
+    <?php
+        echo "Hello World";
+    ?>
 </body>
 </html>
